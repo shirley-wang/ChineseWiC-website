@@ -1,24 +1,27 @@
 import React, { Component } from 'react';
-import Navbar from './navbar.js';
-import Events from './events.js';
-import Homepage from './homepage.js';
+import Navbar from './components/Navbar.js';
+import Homepage from './components/Homepage.js';
+import Content from './config/content';
+import EventFiles from './config/eventsFile.js';
+import Events from './components/Events.js';
+import './../css/style.css';
+
+
 class App extends Component {
+
   render() {
     return (
       <div className="App container-fluid">
-        <Navbar />
+        <div className="row">
+          <Navbar />
+        </div>
+        <div className="row">
+          <Homepage id="homepage .col-sm-12" Content={Content}/>
+        </div>
+        <div className="row">
+          <Events id="events" Content={Content} EventFiles={EventFiles}/>
+        </div>
 
-
-        <div className="row" id="home">
-          <Homepage/>
-        </div>
-        <div className="row" style={{padding:'30px'}} id="events">
-        </div>
-        <div className="row" >
-          <Events />
-        </div>
-        <footer id="contact" className="row-footer">
-        </footer>
       </div>
     );
   }
