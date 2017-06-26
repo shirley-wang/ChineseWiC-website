@@ -3,7 +3,7 @@ import Hero from './../../assets/images/hero.png';
 class Homepage extends Component {
   render() {
     return (
-      <div className="bg">
+      <div className="bg" id="home">
         <img src={Hero} alt=""/>
         <div className="intro">{this.props.Content.intro_statement}</div>
       </div>
