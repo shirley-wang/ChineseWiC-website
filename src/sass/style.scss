@@ -1,4 +1,8 @@
-
+.middleDiv {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
 .bg .intro {
   position: absolute;
   width: 100vw;
@@ -22,4 +26,18 @@
   width: 100vw;
   height: 100vh;
   object-fit: cover;
+}
+
+.imageDiv .eventImage {
+  width: 140px;
+  height: 140px;
+}
+
+.teammateDiv .teammateImg {
+  width: 140px;
+  height: 140px;
+}
+
+.spaceDiv {
+    height: 95px;
 }
