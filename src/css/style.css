@@ -1,37 +1,86 @@
+body {
+  font-family: BentonSans; }
+
 .middleDiv {
   margin: 0;
   padding: 0;
   text-align: center; }
 
-.bg .intro {
+.homepage {
+  position: relative;
+  height: 100vh; }
+
+.homepage .homepageContent {
   position: absolute;
   width: 100vw;
-  top: 200px;
+  font-family: Futura;
+  text-align: center; }
+
+.homepage .welcome {
+  color: white;
+  font-size: 25px;
+  top: 200px; }
+
+.homepage .cwic {
+  color: #f4f00c;
   font-size: 30px;
-  font-weight: 500;
-  text-align: center;
-  color: #ffffff;
-  object-fit: contain; }
+  top: 250px; }
 
-.joinUsBtn {
+.homepage .mission {
+  padding: 0px 300px 0px 300px;
+  color: white;
+  font-size: 15px;
+  top: 300px; }
+
+.homepage img {
+  filter: blur(2px);
   position: absolute;
-  font-size: 40px;
-  color: #ffffff;
-  object-fit: contain; }
-
-.bg img {
-  position: relative;
   width: 100vw;
   height: 100vh;
   object-fit: cover; }
 
-.imageDiv .eventImage {
-  width: 140px;
-  height: 140px; }
+.eventDiv {
+  margin: 0px 0px 20px 0px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25); }
+  .eventDiv .eventImage {
+    width: 147px;
+    height: 147px; }
+  .eventDiv .eventInfo {
+    background-color: white; }
+  .eventDiv button {
+    background-color: #550a95;
+    color: white;
+    text-align: center;
+    border: none;
+    width: 100%;
+    padding-left: 0px;
+    height: 147px; }
+
+.eventsBackground {
+  background-color: #fffae7; }
 
 .teammateDiv .teammateImg {
   width: 140px;
   height: 140px; }
 
 .spaceDiv {
-  height: 95px; }
+  height: 80px; }
+
+.joinBtn {
+  background-color: #550a95;
+  color: white;
+  text-align: center;
+  border: none;
+  height: 50px;
+  width: 70px; }
+
+.feedbackDiv {
+  background-color: #ffeca8; }
+
+.sendBtn {
+  border: 2px solid #6b07bf;
+  background-color: #ffeca8;
+  color: #6b07bf;
+  border-radius: 5px;
+  width: 180px;
+  height: 50px; }

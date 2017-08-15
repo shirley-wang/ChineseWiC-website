@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col, Image } from 'react-bootstrap';
+import { Col, Image } from 'react-bootstrap';
 import Thumbnail from './../../assets/images/circleImg.png';
 class Teammate extends Component {
   render() {

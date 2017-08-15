@@ -4,5 +4,8 @@ module.exports = {
   mission_title: 'Our Mission Statement',
   mission_statement: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis lectus turpis. Sed porttitor, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis lectus turpis.',
   feedback: 'Leave Us Feedback',
-  RSVP: 'RSVP here'
+  RSVP: 'RSVP',
+  meet_us: 'MEET OUR COFOUNDERS',
+  welcome: 'welcome to',
+  cwic: "CHINESE WOMEN IN COMPUTING"
 };

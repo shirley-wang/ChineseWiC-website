@@ -16,7 +16,7 @@ class Events extends Component {
     let newEventDiv,
       pastEventDiv;
     if(this.state.showNewEvents) {
-      newEventDiv = <div className="row">
+      newEventDiv = <div className="row eventsBackground">
       {
         this.props.EventFiles.map((eventData) => {
          return <Event eventData={eventData} Content={this.props.Content}/>
@@ -25,18 +25,18 @@ class Events extends Component {
       </div>;
     }
     if(!this.state.showNewEvents) {
-      pastEventDiv = <div>This is past event</div>
+      pastEventDiv = <div className="row eventsBackground">This is past event</div>
     }
     return (
       <div className="eventsDiv" id="events">
-        <Nav bsStyle="tabs" justified activeKey={this.state.activeKey} onSelect={this.handleSelect}>
-          <NavItem eventKey={1} href="#events">Coming events</NavItem>
-          <NavItem eventKey={2} href="#events">Past events</NavItem>
+        <Nav className="row tabs" bsStyle="tabs" justified activeKey={this.state.activeKey} onSelect={this.handleSelect}>
+          <NavItem className="tabItem" eventKey={1} href="#events">Coming events</NavItem>
+          <NavItem className="tabItem" eventKey={2} href="#events">Past events</NavItem>
         </Nav>
-        <div className="spaceDiv"></div>
+        <div className="row spaceDiv eventsBackground"></div>
         {newEventDiv}
         {pastEventDiv}
-        <div className="spaceDiv"></div>
+        <div className="row spaceDiv eventsBackground"></div>
       </div>
     );
   }

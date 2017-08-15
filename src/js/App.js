@@ -11,11 +11,32 @@ import Login from './components/Login.js';
 import './../css/style.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this._bind("handleSignUp");
+    this.state = {
+      showSignUp: false
+    };
+  }
+
+  _bind(...methods) {
+    methods.forEach(method => this[method] = this[method].bind(this));
+  }
+
+  handleSignUp() {
+    console.log("join is clickd");
+    this.setState({showSignUp: true});
+  }
+
   render() {
+    let loginDiv;
+    if (this.state.showSignUp) {
+      loginDiv = <Login show={true}/>
+    }
     return (
       <div className="App container-fluid">
         <div className="row">
-          <Navigation />
+          <Navigation handleSignUp={this.handleSignUp}/>
         </div>
         <div className="row">
           <Homepage Content={Content}/>
@@ -28,9 +49,10 @@ class App extends Component {
           <About TeammateInfo={TeammateInfo} Content={Content}/>
         </div>
         <div className="row spaceDiv"></div>
-        <div className="row container-fluid">
+        <div className="row container-fluid feedbackDiv">
           <Feedback Content={Content}/>
         </div>
+        {loginDiv}
       </div>
     );
   }

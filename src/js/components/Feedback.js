@@ -1,24 +1,38 @@
 import React, { Component } from 'react';
-import { Form, FormGroup, ControlLabel, FormControl, Col } from 'react-bootstrap';
+import { Form, FormGroup, FormControl, Col, Row, Button } from 'react-bootstrap';
 
 class Feedback extends Component {
   render() {
     return (
       <div className="middleDiv">
         <h3>{this.props.Content.feedback}</h3>
-        <Col md={6} lg={6} mdOffset={3} lgOffSet={3}>
         <Form>
-        <FormGroup>
-          <FormControl type="text" placeholder="Name*" />
-        </FormGroup>
-        <FormGroup>
-          <FormControl type="text" placeholder="Email*" />
-        </FormGroup>
-        <FormGroup controlId="formControlsTextarea">
-          <FormControl componentClass="textarea" placeholder="Feedback content*" />
-        </FormGroup>
+          <Row>
+            <Col md={3} mdOffset={1}>
+              <FormGroup>
+                <FormControl type="text" placeholder="NAME *" />
+              </FormGroup>
+            </Col>
+            <Col md={7}>
+              <FormGroup>
+                <FormControl type="text" placeholder="EMAIL *" />
+              </FormGroup>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={10} mdOffset={1}>
+              <FormGroup controlId="formControlsTextarea">
+                <FormControl rows="5" componentClass="textarea" placeholder="YOUR FEEDBACK *" />
+              </FormGroup>
+            </Col>
+          </Row>
+          <Row>
+            <div className="middleDiv">
+              <button className="sendBtn">Send</button>
+            </div>
+          </Row>
         </Form>
-        </Col>
+        <div className="row spaceDiv"></div>
       </div>
     );
   }
