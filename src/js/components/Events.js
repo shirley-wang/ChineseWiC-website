@@ -1,54 +1,42 @@
 import React, { Component } from 'react';
 import Event from './Event.js';
-
+import { Nav, NavItem } from 'react-bootstrap';
 class Events extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {showNewEvents: true, activeKey: 1};
+    this.handleSelect = this.handleSelect.bind(this);
+  }
+
+  handleSelect(selectedKey) {
+    const isNewEvent = selectedKey === 1;
+    this.setState({showNewEvents: isNewEvent, activeKey: selectedKey});
+  }
   render() {
+    let newEventDiv,
+      pastEventDiv;
+    if(this.state.showNewEvents) {
+      newEventDiv = <div className="row eventsBackground">
+      {
+        this.props.EventFiles.map((eventData) => {
+         return <Event eventData={eventData} Content={this.props.Content}/>
+        })
+      }
+      </div>;
+    }
+    if(!this.state.showNewEvents) {
+      pastEventDiv = <div className="row eventsBackground">This is past event</div>
+    }
     return (
-      <div className="container">
-        <ul className="nav nav-tabs nav-justified">
-          <li role="presentation" className="active"><a href="#events">Coming event</a></li>
-          <li role="presentation"><a href="#events">Past event</a></li>
-        </ul>
-        {/*<div className="eventRow" id="events">
-        {
-          this.props.EventFiles.map((eventData) => {
-           return <Event eventData={eventData} />
-          })
-        }
-        </div>*/}
-        <div id="carousel-event" className="carousel slide" data-ride="carousel">
-          <ol className="carousel-indicators">
-            <li data-target="#carousel-event" data-slide-to="0" className="active"></li>
-            <li data-target="#carousel-event" data-slide-to="1"></li>
-            <li data-target="#carousel-event" data-slide-to="2"></li>
-          </ol>
-
-          <div className="carousel-inner" role="listbox">
-            <div className="item active">
-              <div className="eventRow" id="events">
-              {
-                this.props.EventFiles.map((eventData) => {return <Event eventData={eventData}/>})
-              }
-              </div>
-            </div>
-            <div className="item">
-              <div className="eventRow" id="events">
-              {
-                this.props.EventFiles.map((eventData) => {return <Event eventData={eventData}/>})
-              }
-              </div>
-            </div>
-          </div>
-
-          <a className="left carousel-control" href="#carousel-event" role="button" data-slide="prev">
-            <span className="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span className="sr-only">Previous</span>
-          </a>
-          <a className="right carousel-control" href="#carousel-event" role="button" data-slide="next">
-            <span className="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span className="sr-only">Next</span>
-          </a>
-        </div>
+      <div className="eventsDiv" id="events">
+        <Nav className="row tabs" bsStyle="tabs" justified activeKey={this.state.activeKey} onSelect={this.handleSelect}>
+          <NavItem className="tabItem" eventKey={1} href="#events">Coming events</NavItem>
+          <NavItem className="tabItem" eventKey={2} href="#events">Past events</NavItem>
+        </Nav>
+        <div className="row spaceDiv eventsBackground"></div>
+        {newEventDiv}
+        {pastEventDiv}
+        <div className="row spaceDiv eventsBackground"></div>
       </div>
     );
   }
