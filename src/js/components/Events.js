@@ -4,14 +4,27 @@ import { Nav, NavItem } from 'react-bootstrap';
 class Events extends Component {
   constructor(props) {
     super(props);
-    this.state = {showNewEvents: true, activeKey: 1};
-    this.handleSelect = this.handleSelect.bind(this);
+    this.state = {showNewEvents: true, showPastEvents: false};
+    this._bind("handleUpcomingClick", "handlePastClick");
   }
 
-  handleSelect(selectedKey) {
-    const isNewEvent = selectedKey === 1;
-    this.setState({showNewEvents: isNewEvent, activeKey: selectedKey});
+  _bind(...methods) {
+    methods.forEach(method => this[method] = this[method].bind(this));
   }
+
+  handleUpcomingClick() {
+    this.setState({showNewEvents: true, showPastEvents: false});
+    document.getElementById("pastBtn").style.backgroundColor = "#f7d77d";
+    document.getElementById("upcomingBtn").style.backgroundColor = "#fffae7";
+  }
+
+  handlePastClick() {
+    this.setState({showNewEvents: false, showPastEvents: true});
+    document.getElementById("upcomingBtn").style.backgroundColor = "#f7d77d";
+    document.getElementById("pastBtn").style.backgroundColor = "#fffae7";
+
+  }
+
   render() {
     let newEventDiv,
       pastEventDiv;
@@ -24,15 +37,15 @@ class Events extends Component {
       }
       </div>;
     }
-    if(!this.state.showNewEvents) {
+    if(this.state.showPastEvents) {
       pastEventDiv = <div className="row eventsBackground">This is past event</div>
     }
     return (
       <div className="eventsDiv" id="events">
-        <Nav className="row tabs" bsStyle="tabs" justified activeKey={this.state.activeKey} onSelect={this.handleSelect}>
-          <NavItem className="tabItem" eventKey={1} href="#events">Coming events</NavItem>
-          <NavItem className="tabItem" eventKey={2} href="#events">Past events</NavItem>
-        </Nav>
+        <div className="row eventNav">
+          <button className="eventNavBtn" id="upcomingBtn" onClick={this.handleUpcomingClick}>{this.props.Content.upcoming_events}</button>
+          <button className="eventNavBtn" id="pastBtn" onClick={this.handlePastClick}>{this.props.Content.past_events}</button>
+        </div>
         <div className="row spaceDiv eventsBackground"></div>
         {newEventDiv}
         {pastEventDiv}
