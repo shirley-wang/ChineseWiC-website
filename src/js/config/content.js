@@ -7,5 +7,7 @@ module.exports = {
   RSVP: 'RSVP',
   meet_us: 'MEET OUR COFOUNDERS',
   welcome: 'welcome to',
-  cwic: "CHINESE WOMEN IN COMPUTING"
+  cwic: "CHINESE WOMEN IN COMPUTING",
+  upcoming_events: 'UPCOMING EVENTS',
+  past_events: 'PAST EVENTS'
 };

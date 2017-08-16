@@ -41,7 +41,6 @@ class App extends Component {
         <div className="row">
           <Homepage Content={Content}/>
         </div>
-        <div className="row spaceDiv"></div>
         <div className="row container-fluid">
           <Events Content={Content} EventFiles={EventFiles}/>
         </div>

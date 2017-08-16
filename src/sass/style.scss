@@ -4,9 +4,12 @@ $tab-background-color: #f7d77d;
 $background-color: #fffae7;
 $feedback-background-color: #ffeca8;
 body {
+
   font-family: $font-stack;
 }
-
+h3, h5 {
+  font-family: $font-stack;
+}
 .middleDiv {
   margin: 0;
   padding: 0;
@@ -26,20 +29,31 @@ body {
 
 .homepage  {
   .welcome {
-    color: white;
-    font-size: 25px;
     top: 200px;
+    font-family: Futura;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.9px;
+    text-align: center;
+    color: #ffffff;
   }
   .cwic {
-    color: #f4f00c;
-    font-size: 30px;
     top: 250px;
+    font-family: Futura;
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1.1px;
+    color: #f4f00c
   }
   .mission {
-    padding: 0px 300px 0px 300px;
-    color: white;
-    font-size: 15px;
-    top: 300px;
+    top: 330px;
+    font-family: Futura;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    text-align: center;
+    color: #ffffff;
   }
 }
 
@@ -51,29 +65,47 @@ body {
   object-fit: cover;
 }
 
+.eventNavBtn {
+  border: none;
+  background-color: #fffae7;
+  width: 50%;
+  height: 60px;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.6px;
+  text-align: center;
+  color: #212121;
+}
 
+#pastBtn {
+  background-color: #f7d77d;
+}
 
 .eventDiv {
-  margin: 0px 0px 20px 0px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
-
-  .eventImage {
-    width: 147px;
-    height: 147px;
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  .eventContent {
+    display: inline-block;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+  }
+  img {
+    height: 180px;
   }
   .eventInfo {
+    text-align: left;
     background-color: white;
-  }
-  .eventButton {
+    height: 180px;
   }
   button {
     background-color: #550a95;
     color: white;
     text-align: center;
     border: none;
-    width: 100%;
     padding-left: 0px;
-    height: 147px;
+    width: 120px;
+
+    height: 180px;
   }
 }
 

@@ -4,7 +4,7 @@ class Team extends Component {
   render() {
     return (
       <div>
-        <div className="TeamDiv middleDiv row">
+        <div className="TeamDiv middleDiv">
         {
           this.props.TeammateInfo.map((teammateData) => {
            return <Teammate teammateData={teammateData} />
