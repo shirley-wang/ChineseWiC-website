@@ -6,9 +6,9 @@ class Teammate extends Component {
     return (
       <Col md={6} lg={6}>
       <div className="teammateDiv">
-        <Image src={Thumbnail} alt="image goes here" className="teammateImg" circle/>
-        <h3>{this.props.teammateData.name}</h3>
-        <h4>{this.props.teammateData.description}</h4>
+        <Image src={this.props.teammateData.img} alt="image goes here" className="teammateImg" circle/>
+        <div className="teammateName">{this.props.teammateData.name}</div>
+        <div className="teammateDescription">{this.props.teammateData.description}</div>
       </div>
       </Col>
     );
