@@ -9,5 +9,6 @@ module.exports = {
   welcome: 'welcome to',
   cwic: "CHINESE WOMEN IN COMPUTING",
   upcoming_events: 'UPCOMING EVENTS',
-  past_events: 'PAST EVENTS'
+  past_events: 'PAST EVENTS',
+  thanks_for_the_feedback: 'Thank you for your feedback!'
 };
