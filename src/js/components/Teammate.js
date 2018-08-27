@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Col, Image } from 'react-bootstrap';
-import Thumbnail from './../../assets/images/circleImg.png';
+import { Col, Avatar} from 'antd'
+import "antd/dist/antd.css";
 class Teammate extends Component {
   render() {
     return (
       <Col md={6} lg={6}>
       <div className="teammateDiv">
-        <Image src={this.props.teammateData.img} alt="image goes here" className="teammateImg" circle/>
+        <Avatar src={this.props.teammateData.img} className="teammateImg" shape="circle" size="small"/>
         <div className="teammateName">{this.props.teammateData.name}</div>
         <div className="teammateDescription">{this.props.teammateData.description}</div>
       </div>

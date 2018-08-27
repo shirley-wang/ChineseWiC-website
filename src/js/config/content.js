@@ -10,5 +10,6 @@ module.exports = {
   cwic: "CHINESE WOMEN IN COMPUTING",
   upcoming_events: 'UPCOMING EVENTS',
   past_events: 'PAST EVENTS',
-  thanks_for_the_feedback: 'Thank you for your feedback!'
+  thanks_for_the_feedback: 'Thank you for your feedback!',
+  dont_miss_update_from_us: 'DON’T MISS UPDATES FROM US'
 };
