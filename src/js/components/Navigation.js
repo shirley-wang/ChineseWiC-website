@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import { Menu, Icon } from 'antd';
+import { Menu } from 'antd';
 
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
 
 class Navigation extends Component {
   constructor() {
     super();
     this.state = {
-      current: 'mail',
+      current: 'home',
     }
   }
 

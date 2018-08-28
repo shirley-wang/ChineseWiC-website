@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Form, Icon, Input, Button } from 'antd';
+import { Row, Col, Form, Icon, Input, Button } from 'antd';
 import styled from 'styled-components';
 
 const FormItem = Form.Item;
@@ -40,6 +40,7 @@ const FooterDiv = styled.div`
   letter-spacing: 0.5px;
   color: #ffffff;
 `;
+
 class FeedbackForm extends Component {
   componentDidMount() {
     // To disabled submit button at the beginning.
@@ -64,30 +65,39 @@ class FeedbackForm extends Component {
         <Row>
           <TitleDiv>{this.props.Content.dont_miss_update_from_us}</TitleDiv>
         </Row>
-        <Row>
 
 
-          <Form layout="inline" onSubmit={this.handleSubmit}>
-            <FormItem
-              validateStatus={emailError ? 'error' : ''}
-              help={emailError || ''}>
-              {getFieldDecorator('email', {
-                rules: [{ type: 'email', required: true, message: 'Please enter a valid email' }],
-              })(
-                <Input prefix={<Icon type="mail" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="EMAIL" />
-              )}
-            </FormItem>
-            <FormItem>
-              <Button
-                type="primary"
-                htmlType="submit"
-                disabled={hasErrors(getFieldsError())}
-              >
-                Subscribe
-            </Button>
-            </FormItem>
-          </Form>
-        </Row>
+        <Form onSubmit={this.handleSubmit}>
+          <Row>
+            <Col xs={{ span: 22, offset: 1 }} sm={{ span: 22, offset: 1 }} md={{ span: 15, offset: 1 }} lg={{ span: 15, offset: 1 }} xl={{ span: 15, offset: 1 }} >
+              <FormItem
+                style={{ width: '100%', textAlign: 'center' }}
+                validateStatus={emailError ? 'error' : ''}
+                help={emailError || ''}
+                wrapperCol={{
+                  span: 24
+                }}>
+                {getFieldDecorator('email', {
+                  rules: [{ type: 'email', required: true, message: 'Please enter a valid email' }]
+                })(
+                  <Input prefix={<Icon type="mail" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="EMAIL" />
+                )}
+              </FormItem>
+            </Col>
+            <Col xs={{ span: 22, offset: 1 }} sm={{ span: 22, offset: 1 }} md={{ span: 6, offset: 1 }} lg={{ span: 6, offset: 1 }} xl={{ span: 6, offset: 1 }} >
+              <FormItem style={{ width: '100%' }} wrapperCol={{ span: 24 }}>
+                <Button
+                  style={{ width: '100%', backgroundColor: '#f7d77d', color: 'black'}}
+                  type="primary"
+                  htmlType="submit"
+                  disabled={hasErrors(getFieldsError())}
+                >
+                  Subscribe
+                </Button>
+              </FormItem>
+            </Col>
+          </Row>
+        </Form>
         <FooterDiv>
           © 2018 CWiC
         </FooterDiv>
