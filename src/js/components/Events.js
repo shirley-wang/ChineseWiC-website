@@ -3,7 +3,7 @@ import Event from './Event.js';
 import { Row, Col } from 'antd';
 import styled from 'styled-components';
 
-const NavMenu = styled.a`
+const NavMenu = styled.div`
   font-family: Open Sans;
   font-size: 20px;
   font-weight: 500;
@@ -66,11 +66,11 @@ class Events extends Component {
     }
     return (
       <FormDiv>
-        <Row gutter={48}>
-          <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+        <Row>
+          <Col xs={{ span: 9, offset: 2 }} sm={{ span: 9, offset: 2 }} md={{ span: 9, offset: 2 }} lg={{ span: 9, offset: 2 }} xl={{ span: 9, offset: 2 }}>
             <NavMenu id="upcomingBtn" onClick={this.handleUpcomingClick}>{this.props.Content.upcoming_events}</NavMenu>
           </Col>
-          <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+          <Col xs={{ span: 9, offset: 2 }} sm={{ span: 9, offset: 2 }} md={{ span: 9, offset: 2 }} lg={{ span: 9, offset: 2 }} xl={{ span: 9, offset: 2 }}>
             <NavMenu id="pastBtn" onClick={this.handlePastClick}>{this.props.Content.past_events}</NavMenu>
           </Col>
         </Row>

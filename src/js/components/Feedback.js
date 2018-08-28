@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Icon, Input, Button } from 'antd';
+import { Row, Form, Icon, Input, Button } from 'antd';
 import styled from 'styled-components';
 
 const FormItem = Form.Item;
@@ -10,7 +10,7 @@ function hasErrors(fieldsError) {
 
 const FromDiv = styled.div`
   background-color: #550a95;
-  height: 260px;
+  text-align: center;
 `;
 
 const TitleDiv = styled.div`
@@ -23,8 +23,23 @@ const TitleDiv = styled.div`
   letter-spacing: 0.7px;
   text-align: center;
   color: #ffffff;
+  padding-bottom: 40px;
+  padding-top: 58px;
 `
-
+const FooterDiv = styled.div`
+  background-color: #550a95;
+  text-align: center;
+  padding-top:24px;
+  padding-bottom: 26px;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.29;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+`;
 class FeedbackForm extends Component {
   componentDidMount() {
     // To disabled submit button at the beginning.
@@ -42,33 +57,40 @@ class FeedbackForm extends Component {
 
   render() {
     const { getFieldDecorator, getFieldsError, getFieldError, isFieldTouched } = this.props.form;
-
     // Only show error after a field is touched.
     const emailError = isFieldTouched('email') && getFieldError('email');
     return (
       <FromDiv>
-        <TitleDiv>{this.props.Content.dont_miss_update_from_us}</TitleDiv>
-        <Form layout="inline" onSubmit={this.handleSubmit}>
-          <FormItem
-            validateStatus={emailError ? 'error' : ''}
-            help={emailError || ''}
-          >
-            {getFieldDecorator('email', {
-              rules: [{ required: true, message: 'Please input your email!' }],
-            })(
-              <Input prefix={<Icon type="mail" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="EMAIL" />
-            )}
-          </FormItem>
-          <FormItem>
-            <Button
-              type="primary"
-              htmlType="submit"
-              disabled={hasErrors(getFieldsError())}
-            >
-              Subscribe
+        <Row>
+          <TitleDiv>{this.props.Content.dont_miss_update_from_us}</TitleDiv>
+        </Row>
+        <Row>
+
+
+          <Form layout="inline" onSubmit={this.handleSubmit}>
+            <FormItem
+              validateStatus={emailError ? 'error' : ''}
+              help={emailError || ''}>
+              {getFieldDecorator('email', {
+                rules: [{ type: 'email', required: true, message: 'Please enter a valid email' }],
+              })(
+                <Input prefix={<Icon type="mail" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="EMAIL" />
+              )}
+            </FormItem>
+            <FormItem>
+              <Button
+                type="primary"
+                htmlType="submit"
+                disabled={hasErrors(getFieldsError())}
+              >
+                Subscribe
             </Button>
-          </FormItem>
-        </Form>
+            </FormItem>
+          </Form>
+        </Row>
+        <FooterDiv>
+          © 2018 CWiC
+        </FooterDiv>
       </FromDiv>
     );
   }
