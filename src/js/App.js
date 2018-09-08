@@ -7,51 +7,41 @@ import Events from './components/Events.js';
 import About from './components/About.js';
 import Feedback from './components/Feedback.js';
 import TeammateInfo from './config/teammateInfo.js';
-import Login from './components/Login.js';
 import './../css/style.css';
+import { Row, Col } from 'antd';
+import "antd/dist/antd.css";
+import styled from 'styled-components';
+
 
 class App extends Component {
   constructor() {
     super();
-    this._bind("handleSignUp");
-    this.state = {
-      showSignUp: false
-    };
   }
 
   _bind(...methods) {
     methods.forEach(method => this[method] = this[method].bind(this));
   }
 
-  handleSignUp() {
-    console.log("join is clickd");
-    this.setState({showSignUp: true});
-  }
-
   render() {
-    let loginDiv;
-    if (this.state.showSignUp) {
-      loginDiv = <Login show={true}/>
-    }
     return (
       <div className="App container-fluid">
-        <div className="row">
-          <Navigation handleSignUp={this.handleSignUp}/>
-        </div>
-        <div className="row">
+        <Row >
+          <Navigation/>
+        </Row>
+        <Row>
           <Homepage Content={Content}/>
-        </div>
-        <div className="row container-fluid">
-          <Events Content={Content} EventFiles={EventFiles}/>
-        </div>
-        <div className="row container-fluid">
+        </Row>
+        
+        <Row>
+            <Events Content={Content} EventFiles={EventFiles}/>
+        </Row>
+        
+        <Row>
           <About TeammateInfo={TeammateInfo} Content={Content}/>
-        </div>
-        <div className="row spaceDiv"></div>
-        <div className="row container-fluid feedbackDiv">
+        </Row>
+        <Row>
           <Feedback Content={Content}/>
-        </div>
-        {loginDiv}
+        </Row>
       </div>
     );
   }

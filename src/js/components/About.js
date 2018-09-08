@@ -1,20 +1,38 @@
 import React, { Component } from 'react';
-import {Col} from 'react-bootstrap';
 import Team from './Team.js';
+import {Row} from 'antd';
+import styled from 'styled-components';
+
+const TitleDiv = styled.div`
+  font-family: Open Sans;
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.7px;
+  text-align: center;
+  color: #333333;
+  padding-bottom: 65px;
+`;
+
+const FormDiv = styled.div`
+  padding-top: 60px;
+  padding-bottom: 65px;
+  overflow: auto;
+`;
 class About extends Component {
   render() {
     return (
-      <div className="aboutDiv" id="about">
-        <div className="row spaceDiv"></div>
-        <div className="row middleDiv">
-          <h4>{this.props.Content.meet_us}</h4>
-        </div>
-        <div className="row spaceDiv"></div>
-        <div className="row middleDiv">
-            <Team TeammateInfo={this.props.TeammateInfo}/>
-        </div>
+      <FormDiv>
+        <Row>
+          <TitleDiv>{this.props.Content.meet_us}</TitleDiv>
+        </Row>
+        <Row>
+          <Team TeammateInfo={this.props.TeammateInfo}/>
+        </Row>
 
-      </div>
+      </FormDiv>
     );
   }
 }
