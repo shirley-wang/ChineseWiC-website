@@ -2,7 +2,7 @@ module.exports = {
   intro_statement: 'Intro statement',
   join_us_button: 'Join us',
   mission_title: 'Our Mission Statement',
-  mission_statement: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis lectus turpis. Sed porttitor, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis lectus turpis.',
+  mission_statement: 'Connecting Chinese women in Computing globally to inspire, connect and support one another',
   feedback: 'Leave Us Feedback',
   RSVP: 'RSVP',
   meet_us: 'MEET OUR COFOUNDERS',
