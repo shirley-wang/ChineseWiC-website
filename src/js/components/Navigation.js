@@ -1,41 +1,33 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, Button } from 'react-bootstrap';
+import { Row, Menu } from 'antd';
+import LogoSVG from '../../assets/images/logo.svg'
+import styled from 'styled-components';
+
+const Logo = styled.div`
+  width: 67px;
+  height: 20px;
+  float: left;
+  background-image:url(${LogoSVG});
+  background-repeat: no-repeat;
+  margin: 16px 10px 17px 25px;
+`;
 
 class Navigation extends Component {
-  constructor() {
-    super();
-    this._bind("handleClick");
-  }
-
-  _bind(...methods) {
-    methods.forEach(method => this[method] = this[method].bind(this));
-  }
-
-  handleClick() {
-    this.props.handleSignUp();
-  }
-
   render() {
     return (
-      <Navbar collapseOnSelect>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <a href="#home">Logo / Name</a>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-        <Navbar.Collapse>
-          <Nav pullRight>
-            <li role="presentation"><a href="#home">Home</a></li>
-            <li role="presentation"><a href="#events">Events</a></li>
-            <li role="presentation"><a href="#about">About</a></li>
-            <li role="presentation"><a href="#ghc">GHC</a></li>
-            <li role="presentation"><a href="#ghc">Signin</a></li>
-            <button className="joinBtn" onClick={this.handleClick}>Join</button>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-
+      <Row>
+        <Logo />
+        <Menu
+          mode="horizontal"
+        >
+          <Menu.Item key="events">
+            <a href="#events">EVENTS</a>
+          </Menu.Item>
+          <Menu.Item key="about">
+            <a href="#about">ABOUT</a>
+          </Menu.Item>
+        </Menu>
+      </Row>
     );
   }
 }
