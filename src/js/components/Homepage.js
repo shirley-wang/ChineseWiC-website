@@ -63,7 +63,7 @@ class Homepage extends Component {
         <CwicDiv>{this.props.Content.cwic}</CwicDiv>
         <MissionDiv>{this.props.Content.mission_statement}</MissionDiv>
         <div style={{textAlign: 'center'}}>
-          <UpdateLink href='#feedback'>Get updates</UpdateLink>
+          <UpdateLink target='_blank' href='https://tinyletter.com/chinesewic'>Get updates</UpdateLink>
 
         </div>
       </HomeDiv>
