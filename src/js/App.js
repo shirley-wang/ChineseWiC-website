@@ -25,9 +25,7 @@ class App extends Component {
   render() {
     return (
       <div className="App container-fluid">
-        <Row >
-          <Navigation />
-        </Row>
+        <Navigation />
         <Row>
           <Homepage Content={Content} />
         </Row>

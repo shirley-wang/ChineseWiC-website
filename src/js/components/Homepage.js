@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Row } from 'antd';
 
 const WelcomeDiv = styled.div`
   font-family: Open Sans;
