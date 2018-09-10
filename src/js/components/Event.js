@@ -7,9 +7,6 @@ const DateDiv = styled.div`
   font-family: Roboto;
   font-size: 12px;
   font-weight: 300;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
   letter-spacing: 0.4px;
   color: #212121;
 `;
@@ -17,9 +14,6 @@ const DateDiv = styled.div`
 const EventNameDiv = styled.div`
   font-family: Roboto;
   font-size: 14px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
   line-height: 1.29;
   letter-spacing: 0.5px;
   color: #212121;
@@ -28,9 +22,6 @@ const EventNameDiv = styled.div`
 const DecriptionDiv = styled.div`
   font-family: Roboto;
   font-size: 14px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
   line-height: 1.07;
   letter-spacing: 0.5px;
   color: #858585;
@@ -40,12 +31,13 @@ const RSVPDiv = styled.a`
   font-family: Roboto;
   font-size: 18px;
   font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
   letter-spacing: 0.6px;
   text-align: center;
   color: #550a95;
+`;
+
+const FormDiv = styled.div`
+
 `;
 
 class Event extends Component {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Menu } from 'antd';
 
-
 class Navigation extends Component {
   constructor() {
     super();
@@ -25,14 +24,12 @@ class Navigation extends Component {
         mode="horizontal"
       >
         <Menu.Item key="events">
-          EVENTS
-      </Menu.Item>
+          <a href="#events">EVENTS</a>
+        </Menu.Item>
         <Menu.Item key="about">
-          ABOUT
-      </Menu.Item>
+          <a href="#about">ABOUT</a>
+        </Menu.Item>
       </Menu>
-
-
     );
   }
 }

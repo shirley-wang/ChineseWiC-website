@@ -26,21 +26,19 @@ class App extends Component {
     return (
       <div className="App container-fluid">
         <Row >
-          <Navigation/>
+          <Navigation />
         </Row>
         <Row>
-          <Homepage Content={Content}/>
+          <Homepage Content={Content} />
         </Row>
-        
-        <Row>
-            <Events Content={Content} EventFiles={EventFiles}/>
+        <Row id="events">
+          <Events Content={Content} EventFiles={EventFiles} />
         </Row>
-        
-        <Row>
-          <About TeammateInfo={TeammateInfo} Content={Content}/>
+        <Row id="about">
+          <About TeammateInfo={TeammateInfo} Content={Content} />
         </Row>
-        <Row>
-          <Feedback Content={Content}/>
+        <Row id="feedback">
+          <Feedback Content={Content} />
         </Row>
       </div>
     );

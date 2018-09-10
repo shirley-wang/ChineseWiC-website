@@ -13,6 +13,7 @@ const NavMenu = styled.div`
   letter-spacing: 0.7px;
   text-align: center;
   color: #212121;
+  border-bottom: ${props => props.active ? '4px solid #550a95' : ''};
 `;
 
 const PaddingDiv = styled.div`
@@ -38,15 +39,10 @@ class Events extends Component {
 
   handleUpcomingClick() {
     this.setState({ showNewEvents: true, showPastEvents: false });
-    document.getElementById("pastBtn").style.backgroundColor = "#f7d77d";
-    document.getElementById("upcomingBtn").style.backgroundColor = "#fffae7";
   }
 
   handlePastClick() {
     this.setState({ showNewEvents: false, showPastEvents: true });
-    document.getElementById("upcomingBtn").style.backgroundColor = "#f7d77d";
-    document.getElementById("pastBtn").style.backgroundColor = "#fffae7";
-
   }
 
   render() {
@@ -68,10 +64,10 @@ class Events extends Component {
       <FormDiv>
         <Row>
           <Col xs={{ span: 9, offset: 2 }} sm={{ span: 9, offset: 2 }} md={{ span: 9, offset: 2 }} lg={{ span: 9, offset: 2 }} xl={{ span: 9, offset: 2 }}>
-            <NavMenu id="upcomingBtn" onClick={this.handleUpcomingClick}>{this.props.Content.upcoming_events}</NavMenu>
+            <NavMenu active={this.state.showNewEvents} id="upcomingBtn" onClick={this.handleUpcomingClick}>{this.props.Content.upcoming_events}</NavMenu>
           </Col>
           <Col xs={{ span: 9, offset: 2 }} sm={{ span: 9, offset: 2 }} md={{ span: 9, offset: 2 }} lg={{ span: 9, offset: 2 }} xl={{ span: 9, offset: 2 }}>
-            <NavMenu id="pastBtn" onClick={this.handlePastClick}>{this.props.Content.past_events}</NavMenu>
+            <NavMenu active={this.state.showPastEvents} id="pastBtn" onClick={this.handlePastClick}>{this.props.Content.past_events}</NavMenu>
           </Col>
         </Row>
         <PaddingDiv>
