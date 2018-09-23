@@ -61,7 +61,13 @@ class Events extends Component {
       </PaddingDiv>;
     }
     if (this.state.showPastEvents) {
-      pastEventDiv = <div>This is past event</div>
+      pastEventDiv = <PaddingDiv>
+      {
+        this.props.PastEventFiles.map((eventData) => {
+          return <Event eventData={eventData} Content={this.props.Content} />
+        })
+      }
+    </PaddingDiv>;
     }
     return (
       <FormDiv>

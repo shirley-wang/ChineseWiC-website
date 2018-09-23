@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Form, Button } from 'antd';
+import { Row, Button, Icon } from 'antd';
 import styled from 'styled-components';
 
 const FromDiv = styled.div`
@@ -39,7 +39,9 @@ export default class Feedback extends Component {
   handleSubmit = (e) => {
     window.open("https://tinyletter.com/chinesewic");
   }
-
+  facebookLink = () => {
+    window.open("https://www.facebook.com/groups/abi.chinesewic");
+  }
   render() {
     return (
       <FromDiv>
@@ -54,7 +56,10 @@ export default class Feedback extends Component {
           Subscribe
             </Button>
         <FooterDiv>
-          <a href="#">Privacy Policy</a><p></p>
+          <a onClick={() => this.props.showPrivacy(true)}>Privacy Policy</a><br />
+          <div>
+            <Icon style={{ fontSize: '26px', cursor: 'pointer' }} type="facebook" theme="outlined" onClick={this.facebookLink} />
+          </div>
           © 2018 CWiC
         </FooterDiv>
       </FromDiv>

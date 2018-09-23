@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'antd';
 import styled, { css } from 'styled-components';
 import Thumbnail from './../../assets/images/rectangleImg.png';
 
@@ -64,6 +63,7 @@ const FormDiv = styled.div`
   flex-direction: column;
   align-self: flex-start;
   width: 330px;
+  height: 500px;
   margin: auto;
   margin-bottom: 50px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
@@ -85,7 +85,6 @@ const ContentDiv = styled.div`
   align-self: center;
 `;
 
-
 class Event extends Component {
   render() {
     if (!this.props.eventData.date) {
@@ -93,12 +92,12 @@ class Event extends Component {
     }
     return (
       <FormDiv>
-        <ImgDiv src={Thumbnail} alt="image goes here" ></ImgDiv>
+        <ImgDiv src={this.props.eventData.imgUrl} alt="image goes here" ></ImgDiv>
         <ContentDiv>
           <DateDiv>{this.props.eventData.date} @ {this.props.eventData.location}</DateDiv>
           <EventNameDiv>{this.props.eventData.title}</EventNameDiv>
           <DecriptionDiv>{this.props.eventData.description}</DecriptionDiv>
-          <RSVPDiv href="">RSVP</RSVPDiv>
+          <RSVPDiv href={this.props.eventData.url} target='_blank'>{this.props.eventData.rsvpLabel}</RSVPDiv>
         </ContentDiv>
       </FormDiv >
     );
