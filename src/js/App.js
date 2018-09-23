@@ -3,6 +3,7 @@ import Navigation from './components/Navigation.js';
 import Homepage from './components/Homepage.js';
 import Content from './config/content';
 import EventFiles from './config/eventsFile.js';
+import PastEventFiles from './config/pastEvent';
 import Events from './components/Events.js';
 import About from './components/About.js';
 import Feedback from './components/Feedback.js';
@@ -28,7 +29,7 @@ class App extends Component {
   render() {
     const HomePage = <div><Homepage Content={Content} />
       <Row id="events">
-        <Events Content={Content} EventFiles={EventFiles} />
+        <Events Content={Content} EventFiles={EventFiles} PastEventFiles={PastEventFiles}/>
       </Row>
       <Row id="about">
         <About TeammateInfo={TeammateInfo} Content={Content} />

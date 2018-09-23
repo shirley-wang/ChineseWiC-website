@@ -9,30 +9,6 @@ module.exports = [
     imgUrl: 'https://cdn-images-1.medium.com/max/1600/1*Celagr9vyXsM6nZkgnQ6dg.png'
   },
   {
-    title: 'Grace Hopper Celebration of Women in Computing',
-    date: '10/4/17 - 10/6/17',
-    location: 'Orlando, FL',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis lectus turpis. Sed porttitor',
-    url: 'https://mp.weixin.qq.com/s/i3i2RYuC_XeeJDY0eWiJBQ',
-    rsvpLabel: 'Learn more'
-  },
-  {
-    title: 'Grace Hopper Celebration of Women in Computing',
-    date: '10/4/17 - 10/6/17',
-    location: 'Orlando, FL',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis lectus turpis. Sed porttitor',
-    url: 'https://mp.weixin.qq.com/s/i3i2RYuC_XeeJDY0eWiJBQ',
-    rsvpLabel: 'Learn more'
-  },
-  {
-    title: 'Grace Hopper Celebration of Women in Computing',
-    date: '10/4/17 - 10/6/17',
-    location: 'Orlando, FL',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis lectus turpis. Sed porttitor',
-    url: 'https://mp.weixin.qq.com/s/i3i2RYuC_XeeJDY0eWiJBQ',
-    rsvpLabel: 'Learn more'
-  },
-  {
     title: '',
     date: '',
     location: '',
