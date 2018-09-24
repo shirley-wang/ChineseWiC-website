@@ -53,6 +53,9 @@ export default class Feedback extends React.Component {
   facebookLink = () => {
     window.open("https://www.facebook.com/groups/abi.chinesewic");
   }
+  wechatLink = () => {
+    window.open("https://mp.weixin.qq.com/s/i3i2RYuC_XeeJDY0eWiJBQ");
+  }
   render() {
     return (
       <FromDiv>
@@ -72,7 +75,7 @@ export default class Feedback extends React.Component {
           <SocialLink>
             <Icon style={{ fontSize: '26px', cursor: 'pointer', paddingRight: '10px' }} type="facebook" theme="outlined" onClick={this.facebookLink} />
             <Tooltip title={"ChineseWiC"}>
-              <Icon style={{ fontSize: '26px', cursor: 'pointer' }} type="wechat" theme="outlined" />
+              <Icon style={{ fontSize: '26px', cursor: 'pointer' }} type="wechat" theme="outlined" onClick={this.wechatLink}/>
             </Tooltip>
           </SocialLink>
         </FooterDiv>
