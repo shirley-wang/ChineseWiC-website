@@ -20,6 +20,7 @@ const FormDiv = styled.div`
   padding-top: 60px;
   overflow: auto;
 `;
+
 class About extends React.Component {
   render() {
     return (

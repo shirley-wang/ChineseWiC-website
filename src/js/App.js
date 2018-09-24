@@ -8,7 +8,6 @@ import Events from './components/Events.js';
 import About from './components/About.js';
 import Feedback from './components/Feedback.js';
 import TeammateInfo from './config/teammateInfo.js';
-import './../css/style.css';
 import { Row } from 'antd';
 import "antd/dist/antd.css";
 import Privacy from '../js/components/Privacy';

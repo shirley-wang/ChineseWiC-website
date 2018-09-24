@@ -1,26 +1,5 @@
 import * as React from 'react';
-import styled, { css } from 'styled-components';
-import Thumbnail from './../../assets/images/rectangleImg.png';
-
-const sizes = {
-  mobileS: '320px',
-  mobileM: '375px',
-  mobileL: '425px',
-  tablet: '768px',
-  laptop: '1024px',
-  laptopL: '1440px',
-  desktop: '2560px'
-}
-
-// Iterate through the sizes and create a media template
-const media = Object.keys(sizes).reduce((acc, label) => {
-  acc[label] = (...args) => css`
-    @media (min-width: ${sizes[label] / 16}em) {
-      ${css(...args)}
-    }
-  `
-  return acc
-}, {})
+import styled from 'styled-components';
 
 const DateDiv = styled.div`
   font-family: Roboto;
@@ -61,11 +40,10 @@ const FormDiv = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  align-self: flex-start;
   width: 330px;
   height: 500px;
   margin: auto;
-  margin-bottom: 50px;
+  padding:10px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
 `;
 
@@ -94,7 +72,7 @@ class Event extends React.Component {
       <FormDiv>
         <ImgDiv src={this.props.eventData.imgUrl} alt="image goes here" ></ImgDiv>
         <ContentDiv>
-          <DateDiv>{this.props.eventData.date} @ {this.props.eventData.location}</DateDiv>
+          <DateDiv>{this.props.eventData.date}{this.props.eventData.location}</DateDiv>
           <EventNameDiv>{this.props.eventData.title}</EventNameDiv>
           <DecriptionDiv>{this.props.eventData.description}</DecriptionDiv>
           <RSVPDiv href={this.props.eventData.url} target='_blank'>{this.props.eventData.rsvpLabel}</RSVPDiv>

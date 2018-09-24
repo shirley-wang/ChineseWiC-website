@@ -1,5 +1,5 @@
-const Wei = require('./../../assets/images/wei.png'),
-    Natalie = require('./../../assets/images/natalie.jpg');
+const Wei = require('./../../assets/images/wei.png');
+const Natalie = require('./../../assets/images/natalie.jpg');
 
 module.exports = [
   {

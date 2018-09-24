@@ -30,7 +30,6 @@ class Navigation extends React.Component {
             </Menu.Item>
           </Menu></div> : null
         }
-
       </Row>
     );
   }

@@ -33,18 +33,13 @@ class Events extends React.Component {
   constructor(props) {
     super(props);
     this.state = { showNewEvents: true, showPastEvents: false };
-    this._bind("handleUpcomingClick", "handlePastClick");
   }
 
-  _bind(...methods) {
-    methods.forEach(method => this[method] = this[method].bind(this));
-  }
-
-  handleUpcomingClick() {
+  handleUpcomingClick = () => {
     this.setState({ showNewEvents: true, showPastEvents: false });
   }
 
-  handlePastClick() {
+  handlePastClick = () => {
     this.setState({ showNewEvents: false, showPastEvents: true });
   }
 

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Row } from 'antd';
 import styled from 'styled-components';
 
 const FormDiv = styled.div`
@@ -76,8 +75,3 @@ class Privacy extends React.Component {
 }
 
 export default Privacy;
-
-
-
-
-
