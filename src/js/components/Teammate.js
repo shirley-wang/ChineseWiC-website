@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import { Col, Avatar} from 'antd'
 import styled from 'styled-components';
 
@@ -25,9 +25,10 @@ const DescriptionDiv = styled.div`
   letter-spacing: 0.5px;
   text-align: center;
   color: #787878;
+  padding-bottom: 48px;
 `;
 
-class Teammate extends Component {
+class Teammate extends React.Component {
   render() {
     return (
       <Col xs={24} sm={24} md={{span: 9, offset: 2}} lg={{span: 9, offset: 2}} xl={{span: 9, offset: 2}}>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import Event from './Event.js';
 import { Row, Col } from 'antd';
 import styled from 'styled-components';
@@ -29,7 +29,7 @@ const FormDiv = styled.div`
   overflow: auto;
 `;
 
-class Events extends Component {
+class Events extends React.Component {
   constructor(props) {
     super(props);
     this.state = { showNewEvents: true, showPastEvents: false };

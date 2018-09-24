@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import Navigation from './components/Navigation.js';
 import Homepage from './components/Homepage.js';
 import Content from './config/content';
@@ -13,7 +13,7 @@ import { Row } from 'antd';
 import "antd/dist/antd.css";
 import Privacy from '../js/components/Privacy';
 
-class App extends Component {
+class App extends React.Component {
   constructor() {
     super();
     this.state = {

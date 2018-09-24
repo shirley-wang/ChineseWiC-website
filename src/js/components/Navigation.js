@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import { Row, Menu } from 'antd';
 import LogoSVG from '../../assets/images/logo.svg'
 import styled from 'styled-components';
@@ -13,7 +13,7 @@ const Logo = styled.div`
   cursor: pointer;
 `;
 
-class Navigation extends Component {
+class Navigation extends React.Component {
   render() {
     return (
       <Row>

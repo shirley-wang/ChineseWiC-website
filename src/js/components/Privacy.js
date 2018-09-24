@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import { Row } from 'antd';
 import styled from 'styled-components';
 
@@ -8,7 +8,6 @@ const FormDiv = styled.div`
 `;
 const Title = styled.h1`
     font-family: Open Sans;
-    
 `;
 
 const Paragraph = styled.p`
@@ -19,7 +18,7 @@ const SubTitle = styled.h3`
     font-family: Open Sans;
 `;
 
-class Privacy extends Component {
+class Privacy extends React.Component {
     render() {
         return (
             <FormDiv>

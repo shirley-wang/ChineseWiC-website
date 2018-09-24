@@ -1,19 +1,18 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import { Row, Button, Icon } from 'antd';
 import styled from 'styled-components';
+import { Tooltip } from 'antd';
 
 const FromDiv = styled.div`
   background-color: #550a95;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
 `;
 
 const TitleDiv = styled.div`
   font-family: Open Sans;
   font-size: 20px;
   font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
   letter-spacing: 0.7px;
   text-align: center;
   color: #ffffff;
@@ -21,8 +20,9 @@ const TitleDiv = styled.div`
   padding-top: 58px;
 `
 const FooterDiv = styled.div`
+  display: flex;
+  justify-content: space-around;
   background-color: #550a95;
-  text-align: center;
   padding-top:24px;
   padding-bottom: 26px;
   font-family: Roboto;
@@ -32,10 +32,21 @@ const FooterDiv = styled.div`
   font-stretch: normal;
   line-height: 1.29;
   letter-spacing: 0.5px;
+`;
+
+const PrivacyLink = styled.a`
   color: #ffffff;
 `;
 
-export default class Feedback extends Component {
+const SocialLink = styled.div`
+  color: #ffffff;
+`;
+
+const CopyRight = styled.p`
+  color: #ffffff;
+`;
+
+export default class Feedback extends React.Component {
   handleSubmit = (e) => {
     window.open("https://tinyletter.com/chinesewic");
   }
@@ -49,18 +60,21 @@ export default class Feedback extends Component {
           <TitleDiv>{this.props.Content.dont_miss_update_from_us}</TitleDiv>
         </Row>
         <Button
-          style={{ width: '30%', backgroundColor: '#f7d77d', color: 'black' }}
+          style={{ width: '30%', backgroundColor: '#f7d77d', color: 'black', margin: 'auto' }}
           type="primary"
           onClick={this.handleSubmit}
         >
           Subscribe
             </Button>
         <FooterDiv>
-          <a onClick={() => this.props.showPrivacy(true)}>Privacy Policy</a><br />
-          <div>
-            <Icon style={{ fontSize: '26px', cursor: 'pointer' }} type="facebook" theme="outlined" onClick={this.facebookLink} />
-          </div>
-          © 2018 CWiC
+          <CopyRight>© 2018 CWiC</CopyRight>
+          <PrivacyLink onClick={() => this.props.showPrivacy(true)}>Privacy Policy</PrivacyLink>
+          <SocialLink>
+            <Icon style={{ fontSize: '26px', cursor: 'pointer', paddingRight: '10px' }} type="facebook" theme="outlined" onClick={this.facebookLink} />
+            <Tooltip title={"ChineseWiC"}>
+              <Icon style={{ fontSize: '26px', cursor: 'pointer' }} type="wechat" theme="outlined" />
+            </Tooltip>
+          </SocialLink>
         </FooterDiv>
       </FromDiv>
     );

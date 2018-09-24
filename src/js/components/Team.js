@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import Teammate from './Teammate.js';
 import styled from 'styled-components';
-import {Row} from 'antd';
+import { Row } from 'antd';
 const FormDiv = styled.div`
   text-align: center;
 `;
 
-class Team extends Component {
+class Team extends React.Component {
   render() {
     return (
       <FormDiv>
         <Row className="TeamDiv middleDiv">
-        {
-          this.props.TeammateInfo.map((teammateData) => {
-           return <Teammate teammateData={teammateData} />
-          })
-        }
+          {
+            this.props.TeammateInfo.map((teammateData) => {
+              return <Teammate teammateData={teammateData} />
+            })
+          }
         </Row>
       </FormDiv>
     );

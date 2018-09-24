@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import styled, { css } from 'styled-components';
 import Thumbnail from './../../assets/images/rectangleImg.png';
 
@@ -85,7 +85,7 @@ const ContentDiv = styled.div`
   align-self: center;
 `;
 
-class Event extends Component {
+class Event extends React.Component {
   render() {
     if (!this.props.eventData.date) {
       return <EmptyDiv></EmptyDiv>;

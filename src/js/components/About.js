@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import Team from './Team.js';
 import {Row} from 'antd';
 import styled from 'styled-components';
@@ -18,10 +18,9 @@ const TitleDiv = styled.div`
 
 const FormDiv = styled.div`
   padding-top: 60px;
-  padding-bottom: 65px;
   overflow: auto;
 `;
-class About extends Component {
+class About extends React.Component {
   render() {
     return (
       <FormDiv>
