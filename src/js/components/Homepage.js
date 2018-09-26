@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Background = require('./../../assets/images/home.jpg');
 
 const HomeDiv = styled.div`
-  height: 60vh;
+  height: 70vh;
 `;
 
 const HomeImg = styled.img`

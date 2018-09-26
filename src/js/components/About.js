@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Team from './Team.js';
-import {Row} from 'antd';
+import { Row } from 'antd';
 import styled from 'styled-components';
 
 const TitleDiv = styled.div`
@@ -29,9 +29,8 @@ class About extends React.Component {
           <TitleDiv>{this.props.Content.meet_us}</TitleDiv>
         </Row>
         <Row>
-          <Team TeammateInfo={this.props.TeammateInfo}/>
+          <Team TeammateInfo={this.props.TeammateInfo} />
         </Row>
-
       </FormDiv>
     );
   }

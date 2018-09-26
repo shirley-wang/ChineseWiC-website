@@ -5,7 +5,7 @@ module.exports = {
   mission_statement: 'Connecting Chinese women in Computing globally to inspire, lead, and support one another',
   feedback: 'Leave Us Feedback',
   RSVP: 'RSVP',
-  meet_us: 'MEET OUR COFOUNDERS',
+  meet_us: 'MEET OUR TEAM',
   welcome: 'welcome to',
   cwic: "CHINESE WOMEN IN COMPUTING",
   upcoming_events: 'UPCOMING EVENTS',

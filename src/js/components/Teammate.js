@@ -31,7 +31,7 @@ const DescriptionDiv = styled.div`
 class Teammate extends React.Component {
   render() {
     return (
-      <Col xs={24} sm={24} md={{span: 9, offset: 2}} lg={{span: 9, offset: 2}} xl={{span: 9, offset: 2}}>
+      <Col xs={{span: 20, offset: 2}} sm={{span: 18, offset: 3}} md={{span: 18, offset: 3}} lg={{span: 16, offset: 4}} xl={{span: 12, offset: 6}}>
         <Avatar src={this.props.teammateData.img} shape="circle" size={140}/>
         <NameDiv>{this.props.teammateData.name}</NameDiv>
         <DescriptionDiv>{this.props.teammateData.description}</DescriptionDiv>
